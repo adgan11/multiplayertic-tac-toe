@@ -1,0 +1,408 @@
+[gd_scene load_steps=14 format=3 uid="uid://bt6ss5gcb74d"]
+
+[ext_resource type="Texture2D" uid="uid://ce4lwfir2pxix" path="res://png/BG.png" id="1_l6inh"]
+[ext_resource type="Script" path="res://Scripts/lobby.gd" id="1_qkmfe"]
+[ext_resource type="Script" path="res://Scripts/GameBoard.gd" id="3_e2h5f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_54a7e"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qj5kw"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m4j0w"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_330bg"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2jn2c"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fis6r"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m8kor"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5g63n"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u87fe"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_3tvvi"]
+properties/0/path = NodePath("TicTacToe/GameBoard/Column/Row/Button:text")
+properties/0/spawn = true
+properties/0/sync = true
+properties/1/path = NodePath("TicTacToe/GameBoard/Column/Row/Button2:text")
+properties/1/spawn = true
+properties/1/sync = true
+properties/2/path = NodePath("TicTacToe/GameBoard/Column/Row/Button3:text")
+properties/2/spawn = true
+properties/2/sync = true
+properties/3/path = NodePath("TicTacToe/GameBoard/Column/Row2/Button:text")
+properties/3/spawn = true
+properties/3/sync = true
+properties/4/path = NodePath("TicTacToe/GameBoard/Column/Row2/Button2:text")
+properties/4/spawn = true
+properties/4/sync = true
+properties/5/path = NodePath("TicTacToe/GameBoard/Column/Row2/Button3:text")
+properties/5/spawn = true
+properties/5/sync = true
+properties/6/path = NodePath("TicTacToe/GameBoard/Column/Row3/Button:text")
+properties/6/spawn = true
+properties/6/sync = true
+properties/7/path = NodePath("TicTacToe/GameBoard/Column/Row3/Button2:text")
+properties/7/spawn = true
+properties/7/sync = true
+properties/8/path = NodePath("TicTacToe/GameBoard/Column/Row3/Button3:text")
+properties/8/spawn = true
+properties/8/sync = true
+properties/9/path = NodePath("TicTacToe/MessagePanel/VBoxContainer/Label:text")
+properties/9/spawn = true
+properties/9/sync = true
+properties/10/path = NodePath("TicTacToe/MessagePanel/VBoxContainer/Label2:text")
+properties/10/spawn = true
+properties/10/sync = true
+properties/11/path = NodePath("TicTacToe:press_chance")
+properties/11/spawn = true
+properties/11/sync = true
+properties/12/path = NodePath("TicTacToe/GameOver:visible")
+properties/12/spawn = true
+properties/12/sync = true
+properties/13/path = NodePath("TicTacToe/GameBoard/Player1:text")
+properties/13/spawn = true
+properties/13/sync = true
+properties/14/path = NodePath("TicTacToe/GameBoard/Player2:text")
+properties/14/spawn = true
+properties/14/sync = true
+properties/15/path = NodePath("PlayerList:visible")
+properties/15/spawn = true
+properties/15/sync = true
+
+[node name="Lobby" type="Node2D"]
+script = ExtResource("1_qkmfe")
+
+[node name="Bg" type="Sprite2D" parent="."]
+position = Vector2(408, 672)
+scale = Vector2(0.662667, 0.931111)
+texture = ExtResource("1_l6inh")
+
+[node name="IP" type="LineEdit" parent="."]
+offset_top = 160.0
+offset_right = 648.0
+offset_bottom = 271.0
+text = "Enter the IP address"
+
+[node name="Port" type="LineEdit" parent="."]
+offset_top = 317.0
+offset_right = 648.0
+offset_bottom = 428.0
+text = "Enter the port"
+
+[node name="Join" type="Button" parent="."]
+offset_left = 184.0
+offset_top = 488.0
+offset_right = 416.0
+offset_bottom = 564.0
+text = "JOIN"
+
+[node name="OR" type="Label" parent="."]
+offset_left = 272.0
+offset_top = 648.0
+offset_right = 341.0
+offset_bottom = 718.0
+theme_override_font_sizes/font_size = 48
+text = "OR"
+
+[node name="Host" type="Button" parent="."]
+offset_left = 184.0
+offset_top = 800.0
+offset_right = 416.0
+offset_bottom = 876.0
+text = "HOST"
+
+[node name="PlayerList" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="PlayerList"]
+layout_mode = 0
+offset_right = 648.0
+offset_bottom = 1152.0
+color = Color(0, 0, 0, 0.776471)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayerList"]
+layout_mode = 0
+offset_right = 648.0
+offset_bottom = 1152.0
+theme_override_constants/separation = 150
+
+[node name="TicTacToe" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("3_e2h5f")
+
+[node name="Bg" type="Sprite2D" parent="TicTacToe"]
+position = Vector2(408, 672)
+scale = Vector2(0.662667, 0.931111)
+texture = ExtResource("1_l6inh")
+
+[node name="GameBoard" type="Control" parent="TicTacToe"]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 184.0
+offset_top = 336.0
+offset_right = 224.0
+offset_bottom = 376.0
+
+[node name="Column" type="Control" parent="TicTacToe/GameBoard"]
+layout_mode = 1
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Row" type="Control" parent="TicTacToe/GameBoard/Column"]
+layout_mode = 1
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="TicTacToe/GameBoard/Column/Row"]
+layout_mode = 0
+offset_left = -45.0
+offset_top = -47.0
+offset_right = 44.0
+offset_bottom = 43.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_54a7e")
+
+[node name="Button2" type="Button" parent="TicTacToe/GameBoard/Column/Row"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = -47.0
+offset_right = 177.0
+offset_bottom = 43.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_qj5kw")
+
+[node name="Button3" type="Button" parent="TicTacToe/GameBoard/Column/Row"]
+layout_mode = 0
+offset_left = 224.0
+offset_top = -47.0
+offset_right = 313.0
+offset_bottom = 43.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_m4j0w")
+
+[node name="Row2" type="Control" parent="TicTacToe/GameBoard/Column"]
+layout_mode = 1
+anchors_preset = 0
+offset_top = 128.0
+offset_right = 40.0
+offset_bottom = 168.0
+
+[node name="Button" type="Button" parent="TicTacToe/GameBoard/Column/Row2"]
+layout_mode = 0
+offset_left = -45.0
+offset_top = -47.0
+offset_right = 44.0
+offset_bottom = 43.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_330bg")
+
+[node name="Button2" type="Button" parent="TicTacToe/GameBoard/Column/Row2"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = -47.0
+offset_right = 177.0
+offset_bottom = 43.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_2jn2c")
+
+[node name="Button3" type="Button" parent="TicTacToe/GameBoard/Column/Row2"]
+layout_mode = 0
+offset_left = 224.0
+offset_top = -47.0
+offset_right = 313.0
+offset_bottom = 43.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_fis6r")
+
+[node name="Row3" type="Control" parent="TicTacToe/GameBoard/Column"]
+layout_mode = 1
+anchors_preset = 0
+offset_top = 256.0
+offset_right = 40.0
+offset_bottom = 296.0
+
+[node name="Button" type="Button" parent="TicTacToe/GameBoard/Column/Row3"]
+layout_mode = 0
+offset_left = -45.0
+offset_top = -47.0
+offset_right = 44.0
+offset_bottom = 43.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_m8kor")
+
+[node name="Button2" type="Button" parent="TicTacToe/GameBoard/Column/Row3"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = -47.0
+offset_right = 177.0
+offset_bottom = 43.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_5g63n")
+
+[node name="Button3" type="Button" parent="TicTacToe/GameBoard/Column/Row3"]
+layout_mode = 0
+offset_left = 224.0
+offset_top = -47.0
+offset_right = 313.0
+offset_bottom = 43.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_u87fe")
+
+[node name="Player1" type="Label" parent="TicTacToe/GameBoard"]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 0
+offset_left = -48.0
+offset_top = -208.0
+offset_right = 34.0
+offset_bottom = -163.0
+theme_override_font_sizes/font_size = 30
+text = "name"
+
+[node name="Player2" type="Label" parent="TicTacToe/GameBoard"]
+modulate = Color(0, 0.65098, 1, 1)
+layout_mode = 0
+offset_left = 224.0
+offset_top = -208.0
+offset_right = 306.0
+offset_bottom = -163.0
+theme_override_font_sizes/font_size = 30
+text = "name"
+
+[node name="MessagePanel" type="Control" parent="TicTacToe"]
+layout_mode = 1
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LineEdit" type="LineEdit" parent="TicTacToe/MessagePanel"]
+layout_mode = 0
+offset_left = 229.0
+offset_top = 696.0
+offset_right = 404.766
+offset_bottom = 727.0
+placeholder_text = "Enter your message"
+max_length = 120
+expand_to_text_length = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TicTacToe/MessagePanel"]
+layout_mode = 0
+offset_left = 139.0
+offset_top = 770.0
+offset_right = 250.0
+offset_bottom = 810.0
+
+[node name="Label" type="Label" parent="TicTacToe/MessagePanel/VBoxContainer"]
+layout_mode = 2
+text = "Player 1: Hello"
+
+[node name="Label2" type="Label" parent="TicTacToe/MessagePanel/VBoxContainer"]
+layout_mode = 2
+text = "Player 2: Hi"
+
+[node name="Send" type="Button" parent="TicTacToe/MessagePanel"]
+layout_mode = 0
+offset_left = 472.0
+offset_top = 688.0
+offset_right = 592.0
+offset_bottom = 728.0
+text = "SEND"
+
+[node name="GameOver" type="Control" parent="TicTacToe"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="TicTacToe/GameOver"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 224.0
+offset_right = 608.0
+offset_bottom = 856.0
+color = Color(1, 0.52549, 0.709804, 1)
+
+[node name="Label" type="Label" parent="TicTacToe/GameOver"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 264.0
+offset_right = 557.0
+offset_bottom = 334.0
+theme_override_font_sizes/font_size = 48
+text = "PLAYER 1 (HOST) WIN!"
+
+[node name="Restart" type="Button" parent="TicTacToe/GameOver"]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 632.0
+offset_right = 448.0
+offset_bottom = 720.0
+theme_override_font_sizes/font_size = 30
+text = "Restart(only host)"
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://Scenes/player.tscn")
+spawn_path = NodePath("..")
+spawn_limit = 2
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_3tvvi")
+
+[connection signal="pressed" from="Join" to="." method="_on_join_pressed"]
+[connection signal="pressed" from="Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="TicTacToe/GameOver/Restart" to="TicTacToe" method="_on_restart_pressed"]

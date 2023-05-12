@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://brai6ltxysfql"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_5rptm"]
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_5rptm")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+offset_left = 229.0
+offset_top = 696.0
+offset_right = 404.766
+offset_bottom = 727.0
+placeholder_text = "Enter your message"
+max_length = 120
+expand_to_text_length = true
+
+[node name="Send" type="Button" parent="."]
+offset_left = 472.0
+offset_top = 688.0
+offset_right = 592.0
+offset_bottom = 728.0
+text = "SEND"
+
+[connection signal="text_changed" from="LineEdit" to="." method="_on_line_edit_text_changed"]
+[connection signal="pressed" from="Send" to="." method="_on_send_pressed"]
