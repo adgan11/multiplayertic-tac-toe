@@ -178,6 +178,16 @@ offset_right = 648.0
 offset_bottom = 1152.0
 theme_override_constants/separation = 150
 
+[node name="Reload" type="Button" parent="PlayerList"]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 984.0
+offset_right = 356.0
+offset_bottom = 1129.0
+theme_override_font_sizes/font_size = 100
+text = "↻"
+flat = true
+
 [node name="TicTacToe" type="Control" parent="."]
 visible = false
 layout_mode = 3
@@ -395,6 +405,15 @@ offset_bottom = 720.0
 theme_override_font_sizes/font_size = 30
 text = "Restart(only host)"
 
+[node name="Reload" type="Button" parent="TicTacToe"]
+offset_left = 288.0
+offset_top = 984.0
+offset_right = 356.0
+offset_bottom = 1129.0
+theme_override_font_sizes/font_size = 100
+text = "↻"
+flat = true
+
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
 _spawnable_scenes = PackedStringArray("res://Scenes/player.tscn")
 spawn_path = NodePath("..")
@@ -405,4 +424,6 @@ replication_config = SubResource("SceneReplicationConfig_3tvvi")
 
 [connection signal="pressed" from="Join" to="." method="_on_join_pressed"]
 [connection signal="pressed" from="Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="PlayerList/Reload" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="TicTacToe/GameOver/Restart" to="TicTacToe" method="_on_restart_pressed"]
+[connection signal="pressed" from="TicTacToe/Reload" to="." method="_on_button_pressed"]

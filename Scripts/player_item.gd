@@ -15,3 +15,5 @@ func _enter_tree():
 
 func _on_button_pressed():
 	pressed_button.emit($Label.text)
+
+	

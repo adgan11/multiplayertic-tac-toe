@@ -16,6 +16,7 @@ var items = []
 func _ready():
 	if DisplayServer.get_name() == "headless":
 		print("Automatically starting the server...")
+		
 
 func _on_host_pressed():
 	var peer = ENetMultiplayerPeer.new()
@@ -30,7 +31,7 @@ func _on_host_pressed():
 			await get_tree().create_timer(1.0).timeout
 			add_level(new_peer_id)
 	)
-
+	multiplayer.peer_disconnected.connect(remove_peer)
 
 func _on_join_pressed():
 	# Start as client.
@@ -44,6 +45,11 @@ func _on_join_pressed():
 		OS.alert("Failed to start multiplayer client.")
 		return
 	multiplayer.multiplayer_peer = peer
+	
+func remove_peer(p_id):
+	var player = get_node_or_null(str(p_id))
+	if player:
+		get_tree().reload_current_scene()
 
 func add_level(peer_id):
 	connected_peers.append(peer_id)
@@ -58,6 +64,7 @@ func add_level(peer_id):
 	$PlayerList.show()
 	var player = scene.instantiate()
 	player.set_multiplayer_authority(peer_id)
+	player.name = str(peer_id)
 	if peer_id == 1:
 		$TicTacToe/GameBoard/Player1.text = str(peer_id)
 	else:
@@ -90,3 +97,14 @@ func selected_button(p_id):
 @rpc("call_remote")
 func start_game():
 	$TicTacToe.show()
+
+
+func _on_button_pressed():
+	get_tree().reload_current_scene()
+	multiplayer.multiplayer_peer = null
+	rpc("reload_scene")
+	
+@rpc("any_peer")
+func reload_scene():
+	get_tree().reload_current_scene()
+	multiplayer.multiplayer_peer = null
